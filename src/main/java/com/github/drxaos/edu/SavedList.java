@@ -22,7 +22,7 @@ public class SavedList<E extends Serializable> extends AbstractList<E> implement
     public void reload() throws FileOperationException {
         list = new LinkedList<E>();
         try{
-            ObjectInputStream inStream = new ObjectInputStream(new BufferedInputStream(new FileInputStream(this.file)));
+            ObjectInputStream inStream = new ObjectInputStream(new FileInputStream(this.file));
             list = (LinkedList<E>)inStream.readObject();
             inStream.close();
         }
@@ -31,7 +31,7 @@ public class SavedList<E extends Serializable> extends AbstractList<E> implement
 
     private void save(){
         try{
-            ObjectOutputStream outStream = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(file)));
+            ObjectOutputStream outStream = new ObjectOutputStream(new FileOutputStream(file));
             outStream.writeObject(list);
             outStream.close();
         }

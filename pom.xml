@@ -7,6 +7,7 @@
     <groupId>com.github.drxaos</groupId>
     <artifactId>generics-excercise</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
