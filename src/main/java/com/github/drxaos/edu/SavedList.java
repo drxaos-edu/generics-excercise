@@ -11,67 +11,41 @@ public class SavedList<E extends Serializable> extends AbstractList<E> implement
     private File _file;
 
     public SavedList(File file) {
-        if (file.exists()) {
-            _file = file;
-            reload();
-            } else {
-            _file = new File(file.toString());
-        }
+
     }
 
     public void reload() throws FileOperationException {
-        if (!_file.exists()) savedList.clear();
-        try {
-            FileInputStream fis = new FileInputStream(_file);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            savedList = (ArrayList<E>) ois.readObject();
-            ois.close();
-        }catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
+
 
     }
 
     @Override
     public E get(int index) {
-        return savedList.get(index);
+        return null;
     }
 
     @Override
     public E set(int index, E element) {
-        savedList.set(index, element);
-        save();
-        return element;
+        return null;
     }
 
     @Override
     public int size() {
-        return savedList.size();
+        return 0;
     }
 
     @Override
     public void add(int index, E element) {
-        savedList.add(index, element);
-        save();
+
     }
 
     @Override
     public E remove(int index) {
-        E elem = savedList.get(index);
-        savedList.remove(index);
-        save();
-        return elem;
+        return null;
     }
 
     private void save() {
-        try {
-            FileOutputStream fos = new FileOutputStream(_file);
-            ObjectOutputStream out = new ObjectOutputStream(fos);
-            out.writeObject(savedList);
-            fos.close();
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
+
     }
 }
 
