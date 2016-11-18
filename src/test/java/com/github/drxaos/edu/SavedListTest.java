@@ -3,7 +3,7 @@ package com.github.drxaos.edu;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.File;
+import java.io.*;
 import java.util.Iterator;
 
 public class SavedListTest {
@@ -144,4 +144,12 @@ public class SavedListTest {
         Assert.assertEquals(Integer.valueOf(3), loadedList.get(2));
         Assert.assertEquals(3, loadedList.size());
     }
+
+    public static void main(String[] args) {
+
+
+
+
+    }
+
 }
